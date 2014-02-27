@@ -1,0 +1,87 @@
+body {
+	margin: 25px;
+	background-color: #324472;
+	font-family: arial;
+}
+
+#container {
+	width: 900px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: white;
+	overflow: hidden;
+	border-radius: 20px;
+	-webkit-animation: flipInX 1.5s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: center center;
+	padding:20px;
+}
+
+header img {
+	max-width: 75px;
+	float: left;
+	background-color: white;
+}
+
+.headerLine {
+	margin-left: -300px;
+	-webkit-animation: fadeIn 1.5s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: left top;
+}
+
+h1 {
+	font-size: 200%;
+	font-style: bold;
+	margin-left: 15px;
+	float: left;
+}
+
+nav {
+	width: 700px;
+	margin: 40px auto;
+	-webkit-animation: flipInY 1.5s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: left top;
+
+}
+
+nav img {
+	border-radius: 20px;
+	max-width: 200px;
+	margin: 15px;
+}
+
+nav img:hover {
+	-webkit-animation: scaleIn 0.5s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-transform-origin: center center;
+}
+
+@-webkit-keyframes flipInY
+{
+	0% {-webkit-transform: rotateY(90deg)}
+	40% {-webkit-transform: rotateY(-10deg)}
+	70% {-webkit-transform: rotateY(10deg)}
+	100% {-webkit-transform: rotateY(0deg)}
+}
+
+@-webkit-keyframes fadeIn
+{
+	100% {-webkit-transform: translateX(300px)}
+}
+
+@-webkit-keyframes flipInX
+{
+	0% {-webkit-transform: rotateX(90deg)}
+	40% {-webkit-transform: rotateX(-10deg)}
+	70% {-webkit-transform: rotateX(10deg)}
+	100% {-webkit-transform: rotateX(0deg)}
+}
+
+@-webkit-keyframes scaleIn
+{
+	100% {-webkit-transform: scale(1.1)}
+}
