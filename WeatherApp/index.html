@@ -7,15 +7,46 @@
 	<link rel="stylesheet" href="css/reset.css" media="all">
 	<link rel="stylesheet" href="css/screen.css" media="all">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		
+	<link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
 	
 	
 </head>
 <body>
 
-<h1 id="highlight">Give us a second budy!</h1>
+<div id=center>
+<h1 id="highlight">Give us a second buddy!</h1>
 <h2 id="summary"></h2>
-<h2 id="temperature"></h2>
+<h3 id="temperaturemin"></h2>
+<h3 id="temperaturemax"></h2>
+</div>
+
+<style type="text/css">
+
+body{
+    background-color: #1A9DF2;
+    font-family: 'Rosario', sans-serif;
+    text-align: center;
+}
+#center
+{
+    width: 40%;
+    margin-left:30%;
+    margin-right:30%;
+    background-color: white;
+    color:#1A9DF2;
+    
+
+}
+
+h2{
+    font-size: 2rem;
+    color: #1A9DF2;
+    text-align: center;
+
+}    
+
+
+</style>
 
 
 <script>
@@ -99,7 +130,8 @@ Weather.prototype.render = function(weather) {
         months[11]= "December";
     $("#highlight").text(weekdays[day.getDay()] + ", " + day.getDate() + " " + months[day.getMonth()] + " " + day.getFullYear());
     $("#summary").text(weather.summary);
-    $("#temprature").text(Math.round((weather.temperatureMin-32)* 5 / 9)+ "° -> "+ Math.round((weather.temperatureMax-32)* 5 / 9)+"°")
+    $("#temperaturemin").text(Math.round((weather.temperatureMin-32)* 5 / 9)+ "°C min")
+    $("#temperaturemax").text(Math.round((weather.temperatureMax-32)* 5 / 9)+"°C max")
 }
 
     var coords = {lat: "", lon: ""};
