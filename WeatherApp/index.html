@@ -54,7 +54,13 @@
     }
 
 
-
+var Weather = function(lat, lon) {
+    this.latitude = lat;
+    this.longitude = lon;
+    this.key= "597df09d068541c0d8e9e6d6c5b29ff7";
+    this.weatherData;
+    this.checkStorage();
+}
 
 
 
