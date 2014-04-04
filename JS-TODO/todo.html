@@ -9,14 +9,15 @@
 </head>
 <body>
 
-<div>
-	<ul>
-		<li id="todo-item1">todo1</li>
-		<li id="todo-item2">todo2</li>
-		<li id="todo-item3">todo3</li>
-	</ul>
-
-</div>
+<input id="textfield" type="text" placeholder="Todo" required></input>
+     <select id = "plist">
+               <option value = "high">High</option>
+               <option value = "medium">Medium</option>
+               <option value = "low">Low</option>
+    </select>
+    <button type="submit">Add!</button>
+    <ul>
+    </ul>
 
 
 	<script>
@@ -67,9 +68,44 @@
 
 
 
-	// eigen code
-	$("todo-item1").color("red");
+var $ = function(p_element){
+    var firstCharacter = p_element.charAt(0);
+    var result;
+switch (firstCharacter)
+{
 
+    case '#':
+        var idToSelect=p_element.substr(1,p_element.length-1);
+        var elements= document.getElementById(idToSelect);
+        var result = new IMDElement(element);
+        break;
+
+         case '.':
+        var idToSelect=p_element.substr(1,p_element.length-1);
+        var elements= document.getElementClassName(classToSelect);
+        var result = new IMDElement(elements);
+        break;
+
+}
+return result;
+        
+}
+
+$("button").click(function(){
+
+    var e = document.getElementById("plist"); 
+    var strUser = e.options[e.selectedIndex].value; 
+    if($("#textfield").value()) {
+
+        $("ul").addTodo($("#textfield").value(), strUser).click(
+
+                        function(){new IMDElement(this).addClass("done");}
+            );}
+    });
+
+$("ul").addTodo("Test Todo-item 1","high").click(function(){new IMDElement(this).addClass("done");});
+$("ul").addTodo("Test Todo-item 2","medium").click(function(){new IMDElement(this).addClass("done");});
+$("ul").addTodo("Test Todo-item 3","low").click(function(){new IMDElement(this).addClass("done");});
 
 
 
@@ -80,6 +116,64 @@
 
 
 	</script>
+
+    <style type="text/css">
+    body {
+    margin: 10px;
+    padding: 0;
+    background-color: #111;
+    family-font: Ariel;
+    color: #EEE;
+}
+
+#container {
+    width: 400px;
+    margin: 15px auto;
+    background-color: #1a1a1a;
+}
+
+h1 {
+    padding-top: 10px;
+    font-size: 21pt;
+    text-align: center;
+}
+
+input, select, button {
+    border-radius: 5px;
+    margin-left: 10px;
+    border: none;
+    background-color: #DDD;
+    padding: 10px;
+}
+
+::-webkit-input-placeholder {
+    color: #646060;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    width: auto;
+    list-style: none;
+    font-weight:bold;
+    padding: 20px;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.priority-high {
+    background-color: #c71919;
+}
+.priority-medium {
+    background-color: #d0de20;
+}
+.priority-low {
+    background-color: #4cde20;
+}</style>
 
 </body>
 </html>
