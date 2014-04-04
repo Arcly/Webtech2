@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	
+	<link rel="stylesheet" href="css/reset.css" media="all">
+	<link rel="stylesheet" href="css/screen.css" media="all">
+		
+	
+	
+</head>
+<body>
+
+
+
+
+<script>
+		
+		    var coords = {lat: "", lon: ""};
+    var w;
+    var date = new Date();
+    var tod = date.getDay();
+
+    if(navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition(getPosition, error);
+    } else {
+        alert("No geolocation available in your browser.");
+    }
+
+    function error() {
+        alert("Failed to load geolocation data.");
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
