@@ -92,6 +92,23 @@ Weather.prototype.checkStorage = function() {
     }
 }
 
+Weather.prototype.show = function(number) { 
+        var dailyWeather = this.weatherData.daily.data[number];
+        this.render(dailyWeather);
+}
+
+Weather.prototype.updateLocation = function(lat, lon) {
+    this.latitude = lat;
+    this.longitude = lon;
+    this.loadData();
+}
+
+Weather.prototype.clearStorage = function () {
+    localStorage.setItem("weather","");
+}
+
+
+
 
 
 </script>
