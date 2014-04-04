@@ -62,6 +62,29 @@ var Weather = function(lat, lon) {
     this.checkStorage();
 }
 
+Weather.prototype.loadData = function() {
+    var jsonurl = "https://api.forecast.io/forecast/"+this.key+"/"+this.latitude+","+this.longitude;
+    $.ajax({url: jsonurl, type: "GET", dataType: "jsonp"})
+    .done(function(data) {
+        console.log("saving to storage");
+        //console.log(data);
+        this.weatherData = data;
+        localStorage.setItem("weather", JSON.stringify(this.weatherData));
+        localStorage.setItem("time",new Date().getTime());
+        w.checkStorage();
+    });
+}
+
+Weather.prototype.checkStorage = function() {
+    console.log("checking localstorage");
+    if(!localStorage.getItem("weather")) {
+        this.loadData();
+    } else {
+        console.log("Storage checked, OK");
+        if(new Date().getTime() - localStorage.getItem("time")<= 3600000) {
+            this.weatherData = JSON.parse(localStorage.getItem("weather"));
+            console.log("Storage is last version");
+
 
 
 </script>
