@@ -84,6 +84,13 @@ Weather.prototype.checkStorage = function() {
         if(new Date().getTime() - localStorage.getItem("time")<= 3600000) {
             this.weatherData = JSON.parse(localStorage.getItem("weather"));
             console.log("Storage is last version");
+            this.show(0);
+        } else {
+            console.log("Out of date, reloading data");
+            this.loadData();
+        }
+    }
+}
 
 
 
