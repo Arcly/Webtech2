@@ -43,6 +43,14 @@
 
 
 
+    function getPosition(position) {
+       coords.lat = position.coords.latitude;
+       coords.lon = position.coords.longitude;
+        w= new Weather(coords.lat, coords.lon);
+    }
+
+
+
 
 
 
