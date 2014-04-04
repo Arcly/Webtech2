@@ -42,6 +42,10 @@
         weekdays[6]="Saturday";
 
 
+      var list = $("a");
+    list.each(function(index){
+        $(this).on("click", function(){w.show(index);});
+    });
 
     function getPosition(position) {
        coords.lat = position.coords.latitude;
